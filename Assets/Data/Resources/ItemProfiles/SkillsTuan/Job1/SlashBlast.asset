@@ -1,0 +1,69 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dba0da026f12549ac963ef55dd72c4, type: 3}
+  m_Name: SlashBlast
+  m_EditorClassIdentifier: 
+  skillName: Slash Blast
+  skillType: 1
+  skillCode: 1
+  masterLevel: 20
+  Description: Use HP and MP to attack every enemy around you with a sword.
+  InfoActiveSkill:
+  - levelSkill: 1
+    MPCost: 6
+    HPCost: 8
+    DamageSkill: 70
+    maxEnemyHit: 2
+    maxHit: 3
+    Force: 0
+  - levelSkill: 2
+    MPCost: 8
+    HPCost: 6
+    DamageSkill: 80
+    maxEnemyHit: 2
+    maxHit: 3
+    Force: 0
+  - levelSkill: 3
+    MPCost: 10
+    HPCost: 4
+    DamageSkill: 90
+    maxEnemyHit: 2
+    maxHit: 3
+    Force: 0
+  - levelSkill: 4
+    MPCost: 12
+    HPCost: 2
+    DamageSkill: 100
+    maxEnemyHit: 2
+    maxHit: 3
+    Force: 0
+  - levelSkill: 5
+    MPCost: 14
+    HPCost: 1
+    DamageSkill: 110
+    maxEnemyHit: 2
+    maxHit: 3
+    Force: 0
+  InfoPassiveSkill: []
+  recoverHP: 0
+  recoverMP: 0
+  Duration: 0
+  timeRecover: 0
+  increasesSTR: 0
+  increasesDEX: 0
+  increasesINT: 0
+  increasesLUK: 0
+  increasesDef: 0
+  increasesAtt: 0
+  increasesMaxHP: 0
+  increasesMaxMP: 0
+  skillSprite: {fileID: 21300000, guid: 43665c5c740421444b07fb2bcc4ba0a4, type: 3}

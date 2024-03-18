@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1b45688da8b81714e978b52e02ad7892, type: 3}
+  m_Name: FabricHat_W
+  m_EditorClassIdentifier: 
+  equipmentName: 1
+  classType: 1
+  equipmentType: 1
+  REQLEV: 0
+  REQSTR: 0
+  REQDEX: 0
+  REQINT: 0
+  REQLUK: 0
+  STR: 5
+  DEX: 5
+  INT: 5
+  LUK: 5
+  MaxHP: 50
+  MaxMP: 50
+  AttPower: 1
+  MattPower: 1
+  RemainingEnhancements: 0
+  defaultMaxStack: 1
+  radiusCollider: 0.35
+  equipSprite: {fileID: 21300000, guid: cfb15e652ae457144b8acac4983491a3, type: 3}

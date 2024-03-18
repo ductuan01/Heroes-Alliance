@@ -1,0 +1,36 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dba0da026f12549ac963ef55dd72c4, type: 3}
+  m_Name: IronBody
+  m_EditorClassIdentifier: 
+  skillName: Iron Body
+  skillType: 3
+  skillLevel: 1
+  masterLevel: 20
+  Description: Temporarily increases your defense.
+  MPCost: 8
+  HPCost: 0
+  Damage: 0
+  maxEnemyHit: 0
+  maxHit: 0
+  recoverHP: 0
+  recoverMP: 0
+  Duration: 75
+  timeRecover: 0
+  increasesSTR: 0
+  increasesDEX: 0
+  increasesINT: 0
+  increasesLUK: 0
+  increasesDef: 2
+  increasesAtt: 0
+  increasesMaxHP: 0
+  increasesMaxMp: 0

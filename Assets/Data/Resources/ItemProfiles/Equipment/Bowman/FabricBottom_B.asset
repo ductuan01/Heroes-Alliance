@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ba835ff0c792994aab720ccd8d18947, type: 3}
+  m_Name: FabricBottom_B
+  m_EditorClassIdentifier: 
+  equipmentName: 3
+  classType: 3
+  equipmentType: 3
+  REQLEV: 0
+  REQSTR: 0
+  REQDEX: 0
+  REQINT: 0
+  REQLUK: 0
+  STR: 0
+  DEX: 0
+  INT: 0
+  LUK: 0
+  MaxHP: 0
+  MaxMP: 0
+  AttPower: 0
+  MattPower: 0
+  RemainingEnhancements: 0
+  defaultMaxStack: 1
+  upgradeLevels: []

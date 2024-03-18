@@ -1,0 +1,33 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9a141674a397a7041995009c99389442, type: 3}
+  m_Name: ScrollEquips_1
+  m_EditorClassIdentifier: 
+  useName: Scroll Equips 1
+  useType: 3
+  useCode: 101
+  RecoversHP: 0
+  RecoversMP: 0
+  STR: 1
+  DEX: 1
+  INT: 1
+  LUK: 1
+  MaxHP: 10
+  MaxMP: 10
+  AttPower: 0
+  MattPower: 0
+  Rate: 1
+  Amount: 1
+  defaultMaxStack: 999
+  radiusCollider: 0.35
+  useSprite: {fileID: 21300000, guid: 359a51df199d3dd468303bfa3fe062db, type: 3}
+  useDescription: 
