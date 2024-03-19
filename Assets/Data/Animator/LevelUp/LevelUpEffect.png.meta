@@ -1,0 +1,829 @@
+fileFormatVersion: 2
+guid: f5a717da6f40bc649a5bbc6fb2d79834
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7481943547393354113
+    second: LevelUpEffect_0
+  - first:
+      213: 6634915549917797705
+    second: LevelUpEffect_1
+  - first:
+      213: -3948792265888533040
+    second: LevelUpEffect_2
+  - first:
+      213: 1038131080944221699
+    second: LevelUpEffect_3
+  - first:
+      213: -1465315733485118149
+    second: LevelUpEffect_4
+  - first:
+      213: 3741426209795308054
+    second: LevelUpEffect_5
+  - first:
+      213: 4171104237777438497
+    second: LevelUpEffect_6
+  - first:
+      213: 1552790679718266579
+    second: LevelUpEffect_7
+  - first:
+      213: 3691440726238325490
+    second: LevelUpEffect_8
+  - first:
+      213: -1119661275753452266
+    second: LevelUpEffect_9
+  - first:
+      213: 1484239396838183246
+    second: LevelUpEffect_10
+  - first:
+      213: 4230873420617729902
+    second: LevelUpEffect_11
+  - first:
+      213: -1693415735403383742
+    second: LevelUpEffect_12
+  - first:
+      213: 1277798018205538034
+    second: LevelUpEffect_13
+  - first:
+      213: 8539932574854903556
+    second: LevelUpEffect_14
+  - first:
+      213: 2723003566021340400
+    second: LevelUpEffect_15
+  - first:
+      213: -5730771731208390675
+    second: LevelUpEffect_16
+  - first:
+      213: 5663623089601439781
+    second: LevelUpEffect_17
+  - first:
+      213: -918101685830505794
+    second: LevelUpEffect_18
+  - first:
+      213: -1179914390407890209
+    second: LevelUpEffect_19
+  - first:
+      213: -3765101781175518211
+    second: LevelUpEffect_20
+  - first:
+      213: -6991336654866780492
+    second: LevelUpEffect_21
+  - first:
+      213: -4440711812338455268
+    second: LevelUpEffect_22
+  - first:
+      213: 7662187141442906980
+    second: LevelUpEffect_23
+  - first:
+      213: 8499285284670163602
+    second: LevelUpEffect_24
+  - first:
+      213: 5196776353632611090
+    second: LevelUpEffect_25
+  - first:
+      213: 3328774381649710682
+    second: LevelUpEffect_26
+  - first:
+      213: 7206708233534868960
+    second: LevelUpEffect_27
+  - first:
+      213: 2219121167741529612
+    second: LevelUpEffect_28
+  - first:
+      213: -8810705136259545869
+    second: LevelUpEffect_29
+  externalObjects: {}
+  serializedVersion: 12
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 32
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: LevelUpEffect_0
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 465
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: f76d7141cfbca2890800000000000000
+      internalID: -7481943547393354113
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_1
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 465
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 94dd0931a84f31c50800000000000000
+      internalID: 6634915549917797705
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_2
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 465
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0d577e31b521339c0800000000000000
+      internalID: -3948792265888533040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_3
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 465
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 30ef8f5c7be286e00800000000000000
+      internalID: 1038131080944221699
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_4
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 465
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3d14dd9a172aabe0800000000000000
+      internalID: -1465315733485118149
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_5
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 374
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61a7f2c90573ce330800000000000000
+      internalID: 3741426209795308054
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_6
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 374
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 127c9dd643db2e930800000000000000
+      internalID: 4171104237777438497
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_7
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 374
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3d6052b65ee9c8510800000000000000
+      internalID: 1552790679718266579
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_8
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 374
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2fa68dc48c1aa3330800000000000000
+      internalID: 3691440726238325490
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_9
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 374
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 61d64fd700a2670f0800000000000000
+      internalID: -1119661275753452266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_10
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 283
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e411e2a1ed3199410800000000000000
+      internalID: 1484239396838183246
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_11
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 283
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: e67cf8db5f417ba30800000000000000
+      internalID: 4230873420617729902
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_12
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 283
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 244793a5c57cf78e0800000000000000
+      internalID: -1693415735403383742
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_13
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 283
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 2f6d6d90786abb110800000000000000
+      internalID: 1277798018205538034
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_14
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 283
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 407730a2e6fe38670800000000000000
+      internalID: 8539932574854903556
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_15
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 192
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0fce2d2f05d0ac520800000000000000
+      internalID: 2723003566021340400
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_16
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 192
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: de7397039753870b0800000000000000
+      internalID: -5730771731208390675
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_17
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 192
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 528e46d513b399e40800000000000000
+      internalID: 5663623089601439781
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_18
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 192
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ebaa26c816f3243f0800000000000000
+      internalID: -918101685830505794
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_19
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 192
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fdabd560d1a10afe0800000000000000
+      internalID: -1179914390407890209
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_20
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 101
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: dfbb7ddd0ebafbbc0800000000000000
+      internalID: -3765101781175518211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_21
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 101
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4be6f75aa58c9fe90800000000000000
+      internalID: -6991336654866780492
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_22
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 101
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1d6fa3722c6f52c0800000000000000
+      internalID: -4440711812338455268
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_23
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 101
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 46b2540fb9e855a60800000000000000
+      internalID: 7662187141442906980
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_24
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 101
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 29a487d6fe683f570800000000000000
+      internalID: 8499285284670163602
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_25
+      rect:
+        serializedVersion: 2
+        x: 11
+        y: 10
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 21beb675f88ae1840800000000000000
+      internalID: 5196776353632611090
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_26
+      rect:
+        serializedVersion: 2
+        x: 102
+        y: 10
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: a5ec6abd9ae223e20800000000000000
+      internalID: 3328774381649710682
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_27
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 10
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ed8ab3a4fe530460800000000000000
+      internalID: 7206708233534868960
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_28
+      rect:
+        serializedVersion: 2
+        x: 284
+        y: 10
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c0ea8c4d1f6ebce10800000000000000
+      internalID: 2219121167741529612
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: LevelUpEffect_29
+      rect:
+        serializedVersion: 2
+        x: 375
+        y: 10
+        width: 70
+        height: 76
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 3f44a841c561ab580800000000000000
+      internalID: -8810705136259545869
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5e97eb03825dee720800000000000000
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+  spritePackingTag: 
+  pSDRemoveMatte: 0
+  pSDShowRemoveMatteOption: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

@@ -7,6 +7,9 @@ public class UIPlayerSkillCtrl : SecondMonoBehaviour
     private static UIPlayerSkillCtrl _instance;
     public static UIPlayerSkillCtrl Instance => _instance;
 
+    [SerializeField] private SkillInfoCtrl _skillInfoCtrl;
+    public SkillInfoCtrl SkillInfoCtrl => _skillInfoCtrl;
+
     private bool isOpen = true;
 
     protected override void Awake()
@@ -16,6 +19,19 @@ public class UIPlayerSkillCtrl : SecondMonoBehaviour
         UIPlayerSkillCtrl._instance = this;
 
         this.Toggle();
+    }
+
+    protected override void LoadComponents()
+    {
+        base.LoadComponents();
+        this.LoadSkillInfoCtrl();
+    }
+
+    private void LoadSkillInfoCtrl()
+    {
+        if (this._skillInfoCtrl != null) return;
+        this._skillInfoCtrl = transform.GetComponentInChildren<SkillInfoCtrl>();
+        Debug.LogWarning(transform.name + ": LoadSkillInfoCtrl", gameObject);
     }
 
     private void Update()

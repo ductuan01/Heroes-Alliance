@@ -149,7 +149,6 @@ public class UIKeyBindingsCtrl : Spawner
 
     public void FixUseAmount(UseCode useCode)
     {
-        Debug.Log("ahihi");
         foreach (KeySlot keySlot in this._keyBindingsCtrl.keySlots)
         {
             KeyDragDrop dragKey = keySlot.GetComponentInChildren<KeyDragDrop>();
@@ -197,10 +196,6 @@ public class UIKeyBindingsCtrl : Spawner
             {
                 Transform keySlot;
                 Transform keySlotStatic;
-                //Transform keyBinding;
-                Debug.Log(keyBindingCheck.keybindingActions.ToString());
-                Debug.Log(prefab.transform.name);
-
                 if (keyBindingCheck.keybindingActions.ToString() == prefab.transform.name)
                 {
                     prefab.gameObject.SetActive(false);

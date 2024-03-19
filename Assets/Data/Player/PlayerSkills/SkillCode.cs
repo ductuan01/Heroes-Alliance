@@ -8,4 +8,6 @@ public enum SkillCode
 
     SlashBlast = 1,
     WarLeap = 2,
+    Endure = 3,
+    ImprovingMaxHPIncrease = 4,
 }

@@ -1,0 +1,83 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dba0da026f12549ac963ef55dd72c4, type: 3}
+  m_Name: WarLeap
+  m_EditorClassIdentifier: 
+  skillName: War Leap
+  skillType: 1
+  skillCode: 2
+  masterLevel: 5
+  Description: Use while jumping to jump higher. The higher the skill level, the
+    higher the jump.
+  InfoActiveSkill:
+  - levelSkill: 0
+    MPCost: 0
+    HPCost: 0
+    DamageSkill: 0
+    maxEnemyHit: 0
+    maxHit: 0
+    Force: 0
+    infoSkill: 
+  - levelSkill: 1
+    MPCost: 20
+    HPCost: 0
+    DamageSkill: 0
+    maxEnemyHit: 0
+    maxHit: 0
+    Force: 3.5
+    infoSkill: 'MP Cost: 20, allows you to jump a greater distance'
+  - levelSkill: 2
+    MPCost: 15
+    HPCost: 0
+    DamageSkill: 0
+    maxEnemyHit: 0
+    maxHit: 0
+    Force: 4
+    infoSkill: 'MP Cost: 15, allows you to jump a greater distance'
+  - levelSkill: 3
+    MPCost: 15
+    HPCost: 0
+    DamageSkill: 0
+    maxEnemyHit: 0
+    maxHit: 0
+    Force: 4.5
+    infoSkill: 'MP Cost: 15, allows you to jump a greater distance'
+  - levelSkill: 4
+    MPCost: 10
+    HPCost: 0
+    DamageSkill: 0
+    maxEnemyHit: 0
+    maxHit: 0
+    Force: 5
+    infoSkill: 'MP Cost: 10, allows you to jump a greater distance'
+  - levelSkill: 5
+    MPCost: 10
+    HPCost: 0
+    DamageSkill: 0
+    maxEnemyHit: 0
+    maxHit: 0
+    Force: 5.5
+    infoSkill: 'MP Cost: 10, allows you to jump a greater distance'
+  InfoPassiveSkill: []
+  recoverHP: 0
+  recoverMP: 0
+  Duration: 0
+  timeRecover: 0
+  increasesSTR: 0
+  increasesDEX: 0
+  increasesINT: 0
+  increasesLUK: 0
+  increasesDef: 0
+  increasesAtt: 0
+  increasesMaxHP: 0
+  increasesMaxMP: 0
+  skillSprite: {fileID: 1929198581515944590, guid: 318545ced61ca5d40b42e606bd9cadf1, type: 3}

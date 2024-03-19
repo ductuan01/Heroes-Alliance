@@ -20,7 +20,7 @@ public class UISkillInfo : SecondMonoBehaviour
         if (this._skillProfile != null) return;
         foreach (string skillJob in skillJobs)
         {
-            string resPath = "ItemProfiles/Skills/" + skillJob + "/" + transform.name;
+            string resPath = "Skills/" + skillJob + "/" + transform.name;
             this._skillProfile = Resources.Load<SkillProfileSO>(resPath);
             if (_skillProfile != null) break;
         }

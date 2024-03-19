@@ -100,6 +100,7 @@ public class MonsterMovement : MonsterAbstract
         this.CheckAbyss();
         this.SlopeCheck();
         this.ApplyMovement();
+        if (transform.parent.rotation.y == 0 && !this._bIsGoingRight) this._bIsGoingRight = !this._bIsGoingRight;
     }
 
     private void CheckInput()
@@ -125,12 +126,12 @@ public class MonsterMovement : MonsterAbstract
             }
             if (this._bIsChaseMode)
             {
-                if (transform.parent.position.x + 1 < PlayerCtrl.Instance.transform.position.x)
+                if (transform.parent.position.x + 0.7f < PlayerCtrl.Instance.transform.position.x)
                 {
                     _xInput = 1;
                     if (!this._bIsGoingRight) this.Flip();
                 }
-                else if (transform.parent.position.x - 1 > PlayerCtrl.Instance.transform.position.x)
+                else if (transform.parent.position.x - 0.7f > PlayerCtrl.Instance.transform.position.x)
                 {
                     _xInput = -1;
                     if (this._bIsGoingRight) this.Flip();

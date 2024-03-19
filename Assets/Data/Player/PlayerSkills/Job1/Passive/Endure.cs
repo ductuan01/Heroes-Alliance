@@ -41,6 +41,7 @@ public class Endure : PlayerSkillsAbstract
             if (this._skillInfo.CurrentSkillLevel >= 1)
             {
                 PlayerSkills.PlayerCtrl.PlayerStats.RiseHP(_skillInfo.SkillProfile.InfoPassiveSkill[this._skillInfo.CurrentSkillLevel].recoverHP);
+                PlayerSkills.PlayerCtrl.PlayerStats.RiseMP(_skillInfo.SkillProfile.InfoPassiveSkill[this._skillInfo.CurrentSkillLevel].recoverMP);
             }
             yield return new WaitForSeconds(_skillInfo.SkillProfile.InfoPassiveSkill[this._skillInfo.CurrentSkillLevel].timeLoop);
         }

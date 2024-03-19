@@ -13,4 +13,6 @@ public class ActiveSkill
     public int maxHit;
 
     public float Force; // for war leap
+
+    public string infoSkill = "";
 }

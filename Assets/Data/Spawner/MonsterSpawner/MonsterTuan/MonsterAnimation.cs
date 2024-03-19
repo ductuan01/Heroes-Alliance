@@ -28,12 +28,12 @@ public class MonsterAnimation : MonsterAbstract
 
     private void GetState()
     {
-        if (Time.time < _lockedTill) return;
+        //if (Time.time < _lockedTill) return;
 
         if (MonsterCtrl.MonsterStats.isDead)
         {
             this._monsterAnim.SetTrigger("Dead");
-            LockState(1.5f);
+            //LockState(1.5f);
         }
 
         if (!MonsterCtrl.MonsterStats.isDead)
@@ -48,9 +48,9 @@ public class MonsterAnimation : MonsterAbstract
             }
         }
 
-        static void LockState(float t)
+/*        static void LockState(float t)
         {
             _lockedTill = Time.time + t;
-        }
+        }*/
     }
 }

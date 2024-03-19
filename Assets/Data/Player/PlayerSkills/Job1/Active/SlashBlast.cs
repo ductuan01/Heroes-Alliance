@@ -64,7 +64,7 @@ public class SlashBlast : PlayerSkillsAbstract
     {
         this.newPos = _skillRange.position;
         this.newPos.x = newPos.x + (float)(0.5f * PlayerSkills.PlayerCtrl.PlayerMovement.FacingDirection);
-        this.damageAble();
+        //this.damageAble();
     }
 
     private void damageAble()
@@ -87,7 +87,7 @@ public class SlashBlast : PlayerSkillsAbstract
         Damaged(minDamage, maxDamage + 1, criticalRate);
 
         Transform transform = SkillEffectSpawner.Instance.Spawn(SkillEffectSpawner.slashblast, this.newPos, Quaternion.identity);
-        transform.localScale = new Vector3(0.5f, 0.5f, 0.5f);
+        transform.SetPositionAndRotation(new Vector3(5f, 5f, 5f), Quaternion.identity);
         transform.gameObject.SetActive(true);
 
         yield return new WaitForSeconds(_speed / PlayerSkills.PlayerCtrl.PlayerStats.AtttackSpeed);

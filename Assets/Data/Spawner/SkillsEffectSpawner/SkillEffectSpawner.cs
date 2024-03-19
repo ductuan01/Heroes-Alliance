@@ -7,7 +7,7 @@ public class SkillEffectSpawner : Spawner
     private static SkillEffectSpawner instance;
     public static SkillEffectSpawner Instance => instance;
 
-    public static string slash0 = "Slash_0";
+    public static string attack = "Attack";
     public static string slashblast = "SlashBlast";
 
     protected override void Awake()

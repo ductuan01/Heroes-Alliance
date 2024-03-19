@@ -57,15 +57,24 @@ public class MonsterAttack : MonsterAbstract
     {
         Collider2D[] colliders = Physics2D.OverlapBoxAll(playerCheck.position, new Vector2(2f, 1.5f), 0f, whatIsPlayer);
         if (_players != null) _players.Clear();
-        if (colliders.Length != 0) this._players.Add(colliders[0].transform);
+        if (colliders.Length != 0) 
+        foreach(Collider2D player in colliders)
+        {
+            this._players.Add(player.transform);
+
+        }
     }
 
     private void Damaged()
     {
         if (_players.Count <= 0) return;
-        PlayerDamageReceiver playerDamageReceiver = _players[0].GetComponentInChildren<PlayerDamageReceiver>();
-        if (playerDamageReceiver == null) return;
-        playerDamageReceiver.ReceiverDamage(1, MonsterCtrl.MonsterStats.Damage);
+        foreach (Transform player in _players)
+        {
+            PlayerDamageReceiver playerDamageReceiver = player.GetComponentInChildren<PlayerDamageReceiver>();
+            if (playerDamageReceiver == null) continue;
+            playerDamageReceiver.ReceiverDamage(1, MonsterCtrl.MonsterStats.Damage);
+            return;
+        }
     }
 
     private void OnDrawGizmos()

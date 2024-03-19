@@ -18,7 +18,7 @@ public class SkillInfo : SecondMonoBehaviour
     private void LoadSkillProfile()
     {
         if (this._skillProfile != null) return;
-        string resPath = "ItemProfiles/Skills/Job1/" + transform.parent.name;
+        string resPath = "Skills/Job1/" + transform.parent.name;
         this._skillProfile = Resources.Load<SkillProfileSO>(resPath);
         Debug.LogWarning(transform.name + ": LoadSkillProfile", gameObject);
     }

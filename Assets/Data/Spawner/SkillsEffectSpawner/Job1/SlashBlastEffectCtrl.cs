@@ -29,7 +29,7 @@ public class SlashBlastEffectCtrl : SecondMonoBehaviour
         despwanTimer -= Time.deltaTime;
         if (despwanTimer < 0)
         {
-            ImpactSpawner.Instance.Despawn(transform);
+            SkillEffectSpawner.Instance.Despawn(transform);
         }
         this.followPlayer();
     }

@@ -11,6 +11,7 @@ public class ShowUIInfo : SecondMonoBehaviour, IPointerEnterHandler, IPointerExi
         if (eventData.pointerEnter.GetComponentInChildren<UIEquipInfo>()) ShowEquipInfo(eventData);
         if (eventData.pointerEnter.GetComponentInChildren<UIUseInfo>()) ShowUseInfo(eventData);
         if (eventData.pointerEnter.GetComponentInChildren<UIEtcInfo>()) ShowEtcInfo(eventData);
+        //if (eventData.pointerEnter.GetComponentInChildren<UISkillInfo>()) ShowSkillInfo(eventData);
     }
 
     public void OnPointerExit(PointerEventData eventData)
@@ -57,4 +58,17 @@ public class ShowUIInfo : SecondMonoBehaviour, IPointerEnterHandler, IPointerExi
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.SetItemDescription(etc);
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.gameObject.SetActive(true);
     }
+
+/*    protected virtual void ShowSkillInfo(PointerEventData eventData)
+    {
+        GameObject pointerObj = eventData.pointerEnter;
+        string description = pointerObj.GetComponentInChildren<UISkillInfo>()?.skillProfile.Description;
+        if (description == null) return;
+        if (etc.etcProfile == null) return;
+            
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.SetItemName(etc);
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.SetItemImage(etc);
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.SetItemDescription(etc);
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.gameObject.SetActive(true);
+    }*/
 }

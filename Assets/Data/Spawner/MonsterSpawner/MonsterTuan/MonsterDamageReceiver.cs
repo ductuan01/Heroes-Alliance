@@ -59,7 +59,14 @@ public class MonsterDamageReceiver : MonsterAbstract
         this.MonsterCtrl.MonsterMovement.SetChaseActive();
 
         _hitStartPosition = transform.position;
-        _hitEndPosition = transform.position - new Vector3(0.5f, 0.0f, 0.0f);
+        if(PlayerCtrl.Instance.transform.position.x > transform.position.x)
+        {
+            _hitEndPosition = transform.position - new Vector3(0.5f, 0.0f, 0.0f);
+        }
+        if (PlayerCtrl.Instance.transform.position.x < transform.position.x)
+        {
+            _hitEndPosition = transform.position + new Vector3(0.5f, 0.0f, 0.0f);
+        }
         _hitTimer = 0.0f;
     }
 

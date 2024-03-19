@@ -156,7 +156,6 @@ public class UseDragDrop : SecondMonoBehaviour, IPointerDownHandler, IBeginDragH
             clicktime = 0;
             UseDragDrop useClick = eventData.pointerClick.GetComponent<UseDragDrop>();
             if (useClick == null) return;
-            Debug.Log(useClick.transform.parent.parent.name);
             if (useClick.transform.parent.parent.name == "UseSlots")
             {
                 useClick._useInfo.useInformation.useItem();

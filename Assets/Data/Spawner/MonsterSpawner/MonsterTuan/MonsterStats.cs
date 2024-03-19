@@ -87,7 +87,7 @@ public class MonsterStats : MonsterAbstract
 
     IEnumerator Dead()
     {
-        yield return new WaitForSeconds(1.5f);
+        yield return new WaitForSeconds(2f);
         MonsterSpawner.Instance.Despawn(transform.parent);
     }
 }

@@ -19,6 +19,10 @@ MonoBehaviour:
     keyCode: 97
   - keybindingActions: 3
     keyCode: 115
+  - keybindingActions: 10001
+    keyCode: 100
+  - keybindingActions: 10002
+    keyCode: 102
   - keybindingActions: 103
     keyCode: 122
   - keybindingActions: 102

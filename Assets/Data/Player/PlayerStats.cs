@@ -139,7 +139,6 @@ public class PlayerStats : PlayerAbstract
     public void RiseSkillMaxHP(int SkillMaxHP)
     {
         this._SkillMaxHP = SkillMaxHP;
-        Debug.Log(this._SkillMaxHP);
         this.SetTotalHPMP();
         HPMPBarManager.instance.HPMPBarChange(this._currentHP, this._TotalHP, this._currentMP, this._TotalMP);
         AbilityManager.Instance.AbilityChange();
@@ -225,15 +224,12 @@ public class PlayerStats : PlayerAbstract
 
         this._MinDamage = (totalSTR * 4 + totalDEX * 2) * (int)(totalAttPower * 0.9f) / 100;
         this._MaxDamage = (totalSTR * 5 + totalDEX * 3) * totalAttPower / 100;
-        Debug.Log(this._MinDamage);
-        Debug.Log(this._MaxDamage);
         AbilityManager.Instance.AbilityChange();
     }
     
     public void SetTotalHPMP()
     {
         this._TotalHP = this._MaxHP + this._EtcMaxHP + this._SkillMaxHP;
-        Debug.Log(_TotalHP);
         this._TotalMP = this._MaxMP + this._EtcMaxMP;
         HPMPBarManager.instance.HPMPBarChange(this._currentHP, this._TotalHP, this._currentMP, this._TotalMP);
     }

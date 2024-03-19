@@ -1,0 +1,199 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 31dba0da026f12549ac963ef55dd72c4, type: 3}
+  m_Name: Endure
+  m_EditorClassIdentifier: 
+  skillName: Endure
+  skillType: 2
+  skillCode: 3
+  masterLevel: 10
+  Description: Recover some HP and MP after a certain amount of time.
+  InfoActiveSkill: []
+  InfoPassiveSkill:
+  - levelSkill: 0
+    recoverHP: 0
+    recoverMP: 0
+    timeLoop: 0
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: 
+  - levelSkill: 1
+    recoverHP: 5
+    recoverMP: 2
+    timeLoop: 10
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +5 , MP +2 every 10 seconds
+  - levelSkill: 2
+    recoverHP: 10
+    recoverMP: 4
+    timeLoop: 10
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +10 , MP +4 every 10 seconds
+  - levelSkill: 3
+    recoverHP: 15
+    recoverMP: 6
+    timeLoop: 8
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +15 , MP +8 every 8 seconds
+  - levelSkill: 4
+    recoverHP: 20
+    recoverMP: 10
+    timeLoop: 8
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +20 , MP +10 every 8 seconds
+  - levelSkill: 5
+    recoverHP: 25
+    recoverMP: 12
+    timeLoop: 6
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +25 , MP +12 every 6 seconds
+  - levelSkill: 6
+    recoverHP: 30
+    recoverMP: 15
+    timeLoop: 6
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +30 , MP +15 every 6 seconds
+  - levelSkill: 7
+    recoverHP: 35
+    recoverMP: 17
+    timeLoop: 4
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +35 , MP +17 every 4 seconds
+  - levelSkill: 8
+    recoverHP: 40
+    recoverMP: 20
+    timeLoop: 4
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +40 , MP +20 every 4 seconds
+  - levelSkill: 9
+    recoverHP: 45
+    recoverMP: 22
+    timeLoop: 2
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +45 , MP +22 every 2 seconds
+  - levelSkill: 10
+    recoverHP: 50
+    recoverMP: 25
+    timeLoop: 2
+    increasesSTR: 0
+    increasesDEX: 0
+    increasesINT: 0
+    increasesLUK: 0
+    increasesDef: 0
+    increasesAtt: 0
+    increasesMatt: 0
+    increasesMaxHP: 0
+    increasesMaxMP: 0
+    increasesCriticalRate: 0
+    infoSkill: Recovery HP +50 , MP +25 every 2 seconds
+  recoverHP: 1
+  recoverMP: 0
+  Duration: 0
+  timeRecover: 30
+  increasesSTR: 0
+  increasesDEX: 0
+  increasesINT: 0
+  increasesLUK: 0
+  increasesDef: 0
+  increasesAtt: 0
+  increasesMaxHP: 0
+  increasesMaxMP: 0
+  skillSprite: {fileID: 21300000, guid: 02800fb9cff14da47a04572790384d8b, type: 3}

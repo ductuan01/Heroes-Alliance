@@ -40,9 +40,9 @@ public class MonsterSpawnerRandom : SecondMonoBehaviour
         Transform randomPoint = this.monsterSpawnerCtrl.MonsterSpawnerPoints.GetRandomPoint();
         Vector3 pos = randomPoint.position;
         pos.z = 0;
-        Quaternion rot = transform.rotation;
+        //Quaternion rot = transform.rotation;
 
-        Transform obj = this.monsterSpawnerCtrl.MonsterSpawner.Spawn(MonsterSpawner.monster2, pos, rot);
+        Transform obj = this.monsterSpawnerCtrl.MonsterSpawner.Spawn(MonsterSpawner.monster2, pos, Quaternion.identity);
         obj.gameObject.SetActive(true);
     }
 

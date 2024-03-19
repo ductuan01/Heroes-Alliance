@@ -24,4 +24,6 @@ public class PassiveSkill
     public int increasesMaxMP;
 
     public int increasesCriticalRate;
+
+    public string infoSkill;
 }
