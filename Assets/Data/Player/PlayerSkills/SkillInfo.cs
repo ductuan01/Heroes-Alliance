@@ -27,4 +27,9 @@ public class SkillInfo : SecondMonoBehaviour
     {
         this._currentSkillLevel += 1;
     }
+
+    public void SetCurrentLevel(int level)
+    {
+        this._currentSkillLevel = level;
+    }
 }

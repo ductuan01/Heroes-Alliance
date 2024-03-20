@@ -10,6 +10,7 @@ public class UIPlayerSkillCtrl : SecondMonoBehaviour
     [SerializeField] private SkillInfoCtrl _skillInfoCtrl;
     public SkillInfoCtrl SkillInfoCtrl => _skillInfoCtrl;
 
+
     private bool isOpen = true;
 
     protected override void Awake()
@@ -17,7 +18,11 @@ public class UIPlayerSkillCtrl : SecondMonoBehaviour
         base.Awake();
         if (UIPlayerSkillCtrl._instance != null) Debug.LogError("Only 1 UIPlayerStatsCtrl allow to exist");
         UIPlayerSkillCtrl._instance = this;
+    }
 
+    protected override void Start()
+    {
+        base.Start();
         this.Toggle();
     }
 
@@ -38,15 +43,18 @@ public class UIPlayerSkillCtrl : SecondMonoBehaviour
     {
         if (InputManager.Instance.GetKeyDown(KeybindingActions.Skills))
         {
-            Debug.Log("Open Skill");
             this.Toggle();
         }
     }
 
     public virtual void Toggle()
     {
+        this.transform.SetParent(transform.parent.Find("ForArrangeFirst").transform);
+        this.transform.SetParent(transform.parent.parent);
+
         this.isOpen = !this.isOpen;
         if (this.isOpen) this.gameObject.SetActive(true);
         else this.gameObject.SetActive(false);
+        SkillsJob1Ctrl.Instance.LoadUISkillInfo();
     }
 }

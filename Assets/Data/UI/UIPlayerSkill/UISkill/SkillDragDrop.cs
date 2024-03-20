@@ -17,10 +17,6 @@ public class SkillDragDrop : SecondMonoBehaviour, IPointerDownHandler, IBeginDra
 
     [SerializeField] private Image _skillImage;
 
-    float clicked = 0;
-    float clicktime = 0;
-    float clickdelay = 0.5f;
-
     protected override void LoadComponents()
     {
         base.LoadComponents();

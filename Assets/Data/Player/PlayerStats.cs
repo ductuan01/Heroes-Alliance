@@ -88,18 +88,12 @@ public class PlayerStats : PlayerAbstract
     private bool _isDead = false;
     public bool IsDead => _isDead;
 
-    protected override void OnEnable()
-    {
-        base.OnEnable();
-        //abilityManager.OnAbilityChange += HandleAbilityChange;
-    }
 
     protected override void Awake()
     {
         base.Awake();
         if (PlayerStats._instance != null) Debug.LogError("Only 1 PlayerStats allow to exist");
         PlayerStats._instance = this;
-        _playerName = "Tuan";
     }
 
     protected override void Start()
@@ -110,13 +104,66 @@ public class PlayerStats : PlayerAbstract
         HPMPBarManager.instance.HPMPBarChange(this._currentHP, this._TotalHP, this._currentMP, this._TotalMP);
         AbilityManager.Instance.AbilityChange();
     }
+
+    public void LoadStatsData()
+    {
+        string resPath = "GameData/PlayerStats/StatsData";
+        StatsDataSO statsDataSO = Resources.Load<StatsDataSO>(resPath);
+        if (statsDataSO == null) return;
+        this._AbilityPoint = statsDataSO.abilityPoint;
+        this._currentHP = statsDataSO.currentHP;
+        this._MaxHP = statsDataSO.maxHP;
+        this._currentMP = statsDataSO.currentMP;
+        this._MaxMP = statsDataSO.maxMP;
+        this._BaseSTR = statsDataSO.baseSTR;
+        this._BaseDEX = statsDataSO.baseDEX;
+        this._BaseINT = statsDataSO.baseINT;
+        this._BaseLUK = statsDataSO.baseLUK;
+    }
+    public void SaveStatsData()
+    {
+        string resPath = "GameData/PlayerStats/StatsData";
+        StatsDataSO statsDataSO = Resources.Load<StatsDataSO>(resPath);
+        if (statsDataSO == null) return;
+        statsDataSO.abilityPoint = this._AbilityPoint;
+        statsDataSO.currentHP = this._currentHP;
+        statsDataSO.maxHP = this._MaxHP;
+        statsDataSO.currentMP = this._currentMP;
+        statsDataSO.maxMP = this._MaxMP;
+        statsDataSO.baseSTR = this._BaseSTR;
+        statsDataSO.baseDEX = this._BaseDEX;
+        statsDataSO.baseINT = this._BaseINT;
+        statsDataSO.baseLUK = this._BaseLUK;
+    }
+    public void StatsDataNewGame()
+    {
+        string resPath = "GameData/PlayerStats/StatsData";
+        StatsDataSO statsDataSO = Resources.Load<StatsDataSO>(resPath);
+        if (statsDataSO == null) return;
+        statsDataSO.abilityPoint = 0;
+        statsDataSO.currentHP = 200;
+        statsDataSO.maxHP = 200;
+        statsDataSO.currentMP = 200;
+        statsDataSO.maxMP = 200;
+        statsDataSO.baseSTR = 5;
+        statsDataSO.baseDEX = 5;
+        statsDataSO.baseINT = 5;
+        statsDataSO.baseLUK = 5;
+
+        this.LoadStatsData();
+        HPMPBarManager.instance.HPMPBarChange(this._currentHP, this._TotalHP, this._currentMP, this._TotalMP);
+        AbilityManager.Instance.AbilityChange();
+        MonsterTutorial.Instance.SetMonsterTutorialActive();
+        transform.parent.position = new Vector3(-60f, -1f, 0f);
+    }
+
     public virtual void RaiseBaseAfterLevelUp()
     {
         this._AbilityPoint += 5;
         this._MaxHP += 25;
         this._MaxMP += 5;
-        this._currentHP = this._MaxHP;
-        this._currentMP = this._MaxMP;
+        this._currentHP = this._TotalHP;
+        this._currentMP = this._TotalMP;
         this.Def += 10;
     }
 
@@ -174,8 +221,13 @@ public class PlayerStats : PlayerAbstract
     public void OnDead()
     {
         if (!this._isDead) return;
-        PlayerCtrl.transform.position = new Vector3(0f, 0f, 0f);
+        PlayerCtrl.transform.position = new Vector3(-15f, -1f, 0f);
         this._isDead = false;
+
+        this._currentHP = this.TotalHP * 10 / 100;
+        this._currentMP = this.TotalMP * 10 / 100;
+        HPMPBarManager.instance.HPMPBarChange(this._currentHP, this._TotalHP, this._currentMP, this._TotalMP);
+        AbilityManager.Instance.AbilityChange();
 
         PlayerCtrl.PlayerModel.gameObject.SetActive(true);
         PlayerCtrl.PlayerDead.gameObject.SetActive(false);

@@ -68,6 +68,23 @@ public class EquipDragDrop : SecondMonoBehaviour, IPointerDownHandler, IBeginDra
             this._EquipImage.sprite = this._equipInfo.equipInformation.equipProfile.equipSprite;
         }
     }
+    public virtual void SetUIPlayerEquipInv2()
+    {
+        if (this._equipInfo.equipInformation.equipProfile == null)
+        {
+            Color newColor = this._EquipImage.color;
+            newColor.a = 0f;
+            this._EquipImage.color = newColor;
+            this._EquipImage.sprite = null;
+        }
+        else
+        {
+            Color newColor = this._EquipImage.color;
+            newColor.a = 1f;
+            this._EquipImage.color = newColor;
+            this._EquipImage.sprite = this._equipInfo.equipInformation.equipProfile.equipSprite;
+        }
+    }
 
     public virtual void SetUIPlayerEquipInv()
     {

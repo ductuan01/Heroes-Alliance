@@ -61,6 +61,7 @@ public class NTDCtrl : SecondMonoBehaviour
     {
         if (this._cc != null) return;
         this._cc = transform.GetComponent<CircleCollider2D>();
+        this._cc.radius = this._ntdProfile.radiusCollider;
         Debug.LogWarning(transform.name + ": LoadCircleCollider2D", gameObject);
     }
 }

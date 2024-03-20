@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: edce1aa2583828649bb352cdaf5182bf, type: 3}
+  m_Name: SkillsData
+  m_EditorClassIdentifier: 
+  skillPoint: 0
+  job1:
+  - equipProfile: {fileID: 11400000, guid: 8a1eeff611b787b49916df66ef0f1571, type: 2}
+    currentSkillLevel: 0
+  - equipProfile: {fileID: 11400000, guid: bdf5993875183184586e981eb7f22f98, type: 2}
+    currentSkillLevel: 0
+  - equipProfile: {fileID: 11400000, guid: 25a965ff5195d3743b5cebaba62892d6, type: 2}
+    currentSkillLevel: 0
+  - equipProfile: {fileID: 11400000, guid: 16dd4eb543792ff428dac793acf46b2a, type: 2}
+    currentSkillLevel: 0

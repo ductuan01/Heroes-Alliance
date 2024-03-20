@@ -13,7 +13,7 @@ public class PlayerSkills : PlayerAbstract
     private bool _isAttacking = false;
     public bool IsAttacking => _isAttacking;
 
-    private int _skillPoint = 3;
+    [SerializeField] private int _skillPoint = 0;
     public int SkillPoint => _skillPoint;
 
     [SerializeField] private SkillPointManager _skillPointManager;
@@ -23,7 +23,73 @@ public class PlayerSkills : PlayerAbstract
     {
         if (PlayerSkills._instance != null) Debug.LogError("Only 1 PlayerSkills allow to exist");
         PlayerSkills._instance = this;
+
+        this.LoadSkillsData();
     }
+
+    private void LoadSkillsData()
+    {
+        string resPath = "GameData/PlayerSkills/SkillsData";
+        SkillsDataSO skillsDataSO = Resources.Load<SkillsDataSO>(resPath);
+        if (skillsDataSO == null) return;
+        this._skillPoint = skillsDataSO.skillPoint;
+
+        foreach(Transform skill in this._skills)
+        {
+            SkillInfo skillInfo = skill.transform.GetComponentInChildren<SkillInfo>();
+            if (skillInfo == null) continue;
+            foreach (SkillInfoOfData skillInfoOfData in skillsDataSO.job1)
+            {
+                if (skillInfo.SkillProfile == skillInfoOfData.equipProfile)
+                {
+                    skillInfo.SetCurrentLevel(skillInfoOfData.currentSkillLevel);
+                }
+            }
+        }
+        PlayerCtrl.PlayerStats.LoadStatsData();
+    }
+    public void SaveSkillsData()
+    {
+        string resPath = "GameData/PlayerSkills/SkillsData";
+        SkillsDataSO skillsDataSO = Resources.Load<SkillsDataSO>(resPath);
+        if (skillsDataSO == null) return;
+        skillsDataSO.skillPoint = this._skillPoint;
+        foreach (Transform skill in this._skills)
+        {
+            SkillInfo skillInfo = skill.transform.GetComponentInChildren<SkillInfo>();
+            if (skillInfo == null) continue;
+            foreach (SkillInfoOfData skillInfoOfData in skillsDataSO.job1)
+            {
+                if (skillInfoOfData.equipProfile == skillInfo.SkillProfile)
+                {
+                    skillInfoOfData.currentSkillLevel = skillInfo.CurrentSkillLevel;
+                }
+            }
+        }
+    }
+    public void SkillsDataNewGame()
+    {
+        string resPath = "GameData/PlayerSkills/SkillsData";
+        SkillsDataSO skillsDataSO = Resources.Load<SkillsDataSO>(resPath);
+        if (skillsDataSO == null) return;
+        skillsDataSO.skillPoint = 0;
+        foreach (Transform skill in this._skills)
+        {
+            SkillInfo skillInfo = skill.transform.GetComponentInChildren<SkillInfo>();
+            if (skillInfo == null) continue;
+            foreach (SkillInfoOfData skillInfoOfData in skillsDataSO.job1)
+            {
+                if (skillInfoOfData.equipProfile == skillInfo.SkillProfile)
+                {
+                    skillInfoOfData.currentSkillLevel = 0;
+                }
+            }
+        }
+        this.LoadSkillsData();
+        this._skillPointManager.SkillPointChange(SkillPoint);
+        SkillsJob1Ctrl.Instance.LoadUISkillInfo();
+    }    
+
     protected override void LoadComponents()
     {
         base.LoadComponents();

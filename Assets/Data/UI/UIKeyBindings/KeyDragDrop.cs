@@ -48,33 +48,25 @@ public class KeyDragDrop : SecondMonoBehaviour, IPointerDownHandler, IBeginDragH
 
     public void OnPointerDown(PointerEventData eventData)
     {
-        Debug.Log("OnPointerDown");
-
         this.oldParent = transform.parent;
         this.realParent = transform.parent;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
     {
-        Debug.Log("OnBeginDrag");
-
         _canvasGroup.alpha = .6f;
         _canvasGroup.blocksRaycasts = false;
 
-        transform.parent = canvas.transform;
+        transform.SetParent(canvas.transform);
     }
     public void OnDrag(PointerEventData eventData)
     {
-        Debug.Log("OnDrag");
-
         Vector3 mousePos = InputManager.Instance.MouseWorldPos;
         transform.position = mousePos;
     }
 
     public void OnEndDrag(PointerEventData eventData)
     {
-        Debug.Log("OnEndDrag");
-
         _canvasGroup.alpha = 1f;
         _canvasGroup.blocksRaycasts = true;
 

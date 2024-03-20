@@ -8,6 +8,7 @@ public class Endure : PlayerSkillsAbstract
     public static Endure Instance => _instance;
 
     [SerializeField] private SkillInfo _skillInfo;
+    public SkillInfo SkillInfo => _skillInfo;
 
     protected override void Awake()
     {

@@ -16,7 +16,6 @@ public class PlayerAttack : PlayerAbstract
     [SerializeField] private float _speed = 4f;
 
     private Vector3 newPos = new Vector3();
-    private Vector3 newPoss = new Vector3();
 
     [SerializeField] private LayerMask _whatIsDamageAble;
 
@@ -79,26 +78,33 @@ public class PlayerAttack : PlayerAbstract
 
         if (monsterList.Count > 0) monsterList.Reverse();
 
-        if (monsterList.Count > this._maxEnemyHit)
+        foreach (Transform transform in monsterList)
         {
-            for (int i = 0; i < this._maxEnemyHit; i++)
-            {
-                MonsterDamageReceiver damageAble = monsterList[i].GetComponentInChildren<MonsterDamageReceiver>();
-                if (damageAble == null) continue;
-                damageAble.ReceiveDamage(this._maxHit, minDamage, maxDamage, criticalRate);
-            }
+            MonsterDamageReceiver damageAble = transform.GetComponentInChildren<MonsterDamageReceiver>();
+            if (damageAble == null) continue;
+            damageAble.ReceiveDamage(this._maxHit, minDamage, maxDamage, criticalRate);
+            return;
         }
 
-        if (monsterList.Count <= this._maxEnemyHit)
+        /*        if (monsterList.Count > this._maxEnemyHit)
+                {
+                    for (int i = 0; i < this._maxEnemyHit; i++)
+                    {
+                        MonsterDamageReceiver damageAble = monsterList[i].GetComponentInChildren<MonsterDamageReceiver>();
+                        if (damageAble == null) continue;
+                        damageAble.ReceiveDamage(this._maxHit, minDamage, maxDamage, criticalRate);
+                    }
+                }*/
+
+/*        if (monsterList.Count <= this._maxEnemyHit)
         {
             foreach (Transform transform in monsterList)
             {
-                Debug.Log(transform.name);
                 MonsterDamageReceiver damageAble = transform.GetComponentInChildren<MonsterDamageReceiver>();
                 if (damageAble == null) continue;
                 damageAble.ReceiveDamage(this._maxHit, minDamage, maxDamage, criticalRate);
             }
-        }
+        }*/
     }
     private void OnDrawGizmos()
     {

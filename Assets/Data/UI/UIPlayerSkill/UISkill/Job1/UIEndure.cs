@@ -8,7 +8,7 @@ public class UIEndure : BaseUISkill
 {
     private static UIEndure _instance;
     public static UIEndure Instance => _instance;
-    protected override string _NameSkill => "Endure";
+    protected override string NameSkill => "Endure";
 
     protected override void Awake()
     {

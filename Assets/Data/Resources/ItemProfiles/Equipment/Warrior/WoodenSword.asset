@@ -20,7 +20,7 @@ MonoBehaviour:
   REQDEX: 0
   REQINT: 0
   REQLUK: 0
-  STR: 0
+  STR: 10
   DEX: 10
   INT: 10
   LUK: 10
@@ -30,5 +30,5 @@ MonoBehaviour:
   MattPower: 5
   RemainingEnhancements: 0
   defaultMaxStack: 1
-  radiusCollider: 0.35
+  radiusCollider: 0.2
   equipSprite: {fileID: 21300000, guid: 57cf811a46fca0f4486c7a6d0537002f, type: 3}

@@ -28,6 +28,6 @@ MonoBehaviour:
   Rate: 0
   Amount: 1
   defaultMaxStack: 999
-  radiusCollider: 0.35
+  radiusCollider: 0.2
   useSprite: {fileID: 21300000, guid: 868d16cc55e709845a783a620e511d42, type: 3}
   useDescription: Recovers 100 MP

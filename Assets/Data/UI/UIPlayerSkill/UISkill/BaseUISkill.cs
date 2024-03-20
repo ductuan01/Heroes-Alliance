@@ -9,13 +9,17 @@ public abstract class BaseUISkill : SecondMonoBehaviour
     [SerializeField] private TextMeshProUGUI _SkillLevel;
 
     [SerializeField] private Image _SkillImage;
-    protected abstract string _NameSkill { get; }
+    protected abstract string NameSkill { get; }
+
+    [SerializeField] public SkillPointManager _skillPointManager;
+    //public SkillPointManager SkillPointManager => _skillPointManager;
 
     protected override void LoadComponents()
     {
         base.LoadComponents();
         this.LoadTextMeshPro();
         this.LoadImage();
+        this.LoadSkillPointManager();
     }
 
     private void LoadTextMeshPro()
@@ -28,8 +32,14 @@ public abstract class BaseUISkill : SecondMonoBehaviour
     {
         if (this._SkillImage != null) return;
         this._SkillImage = transform.Find("SkillSlot").Find("SkillImage").GetComponent<Image>();
-        this._SkillImage.sprite = Resources.Load<SkillProfileSO>("ItemProfiles/Skills/Job1/" + _NameSkill).skillSprite;
+        this._SkillImage.sprite = Resources.Load<SkillProfileSO>("Skills/Job1/" + NameSkill).skillSprite;
         Debug.LogWarning(transform.name + ": LoadTextMeshPro", gameObject);
+    }
+
+    private void LoadSkillPointManager()
+    {
+        if (this._skillPointManager != null) return;
+        this._skillPointManager = GameObject.Find("PlayerSkills").GetComponentInChildren<SkillPointManager>();
     }
 
     public void SetSkillLevel(int skillLevel)

@@ -85,15 +85,10 @@ public class SkillInfoCtrl : SecondMonoBehaviour
     public virtual void SetSkillInfo(UISkillInfo skillInfo)
     {
         if (skillInfo == null) return;
-        /*        string _skillInfo = skillInfo.SkillProfile.Description;
-                this._skillDescription.SetText(description);*/
         int currentLevel = 0;
-        //SkillType skillType = SkillType.NoType;
 
         foreach(Transform skill in PlayerSkills.Instance.Skills)
         {
-            Debug.Log(skill.name);
-            Debug.Log(skillInfo.skillProfile.skillCode.ToString());
             if (skill.name == skillInfo.skillProfile.skillCode.ToString())
             {
                 currentLevel = skill.GetComponentInChildren<SkillInfo>().CurrentSkillLevel;
@@ -101,7 +96,6 @@ public class SkillInfoCtrl : SecondMonoBehaviour
             }
         }
 
-        Debug.Log(currentLevel);
         if(skillInfo.skillProfile.skillType == SkillType.ActiveSkill)
         {
             this._skillInfo.SetText("Current Level " + currentLevel + ": " + skillInfo.skillProfile.InfoActiveSkill[currentLevel].infoSkill +

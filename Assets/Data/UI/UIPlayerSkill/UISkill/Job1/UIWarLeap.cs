@@ -8,7 +8,7 @@ public class UIWarLeap : BaseUISkill
 {
     private static UIWarLeap _instance;
     public static UIWarLeap Instance => _instance;
-    protected override string _NameSkill => "WarLeap";
+    protected override string NameSkill => "WarLeap";
 
     protected override void Awake()
     {

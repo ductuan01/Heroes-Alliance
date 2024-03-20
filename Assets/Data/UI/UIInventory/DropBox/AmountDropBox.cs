@@ -8,12 +8,7 @@ using UnityEngine.UI;
 public class AmountDropBox : SecondMonoBehaviour
 {
     [SerializeField] private TMP_InputField _inputField;
-    public TMP_InputField inputField => _inputField;
-
-/*    [SerializeField] private BtnOK _btnOk;
-    public BtnOK btnOk => _btnOk;
-
-    [SerializeField] private BtnCancel _btnCancel;*/
+    public TMP_InputField InputField => _inputField;
 
     private int Limit = 0;
     
@@ -21,8 +16,6 @@ public class AmountDropBox : SecondMonoBehaviour
     {
         base.LoadComponents();
         this.LoadInputField();
-/*        this.LoadButtonOk();
-        this.LoadButtonCancel();*/
     }
 
     private void LoadInputField()
@@ -32,20 +25,6 @@ public class AmountDropBox : SecondMonoBehaviour
         Debug.LogWarning(transform.name + ": LoadInputField", gameObject);
     }
 
-/*    private void LoadButtonOk()
-    {
-        if (this._btnOk != null) return;
-        this._btnOk = transform.GetComponentInChildren<BtnOK>();
-        Debug.LogWarning(transform.name + ": LoadButtonOk", gameObject);
-    }
-
-    private void LoadButtonCancel()
-    {
-        if (this._btnCancel != null) return;
-        this._btnCancel = transform.GetComponentInChildren<BtnCancel>();
-        Debug.LogWarning(transform.name + ": LoadButtonCancel", gameObject);
-    }*/
-
     protected override void Start()
     {
         if (_inputField == null)
@@ -54,6 +33,7 @@ public class AmountDropBox : SecondMonoBehaviour
             return;
         }
         _inputField.onValueChanged.AddListener(OnInputValueChanged);
+        this.transform.gameObject.SetActive(false);
     }
 
     public void ShowBox(int Amount)
@@ -63,7 +43,7 @@ public class AmountDropBox : SecondMonoBehaviour
         this.Limit = Amount;
         _inputField.text = this.Limit.ToString();
 
-        EventSystem.current.SetSelectedGameObject(inputField.gameObject);
+        EventSystem.current.SetSelectedGameObject(InputField.gameObject);
     }
 
     public void HideBox()
@@ -73,8 +53,7 @@ public class AmountDropBox : SecondMonoBehaviour
 
     private void OnInputValueChanged(string newValue)
     {
-        int number;
-        if (!int.TryParse(newValue, out number))
+        if (!int.TryParse(newValue, out int number))
         {
             _inputField.text = "";
             return;
@@ -82,6 +61,6 @@ public class AmountDropBox : SecondMonoBehaviour
 
         number = Mathf.Clamp(number, 1, Limit);
 
-        _inputField.text = number.ToString();
+        this._inputField.text = number.ToString();
     }
 }

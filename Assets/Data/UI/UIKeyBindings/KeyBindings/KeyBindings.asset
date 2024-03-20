@@ -15,19 +15,17 @@ MonoBehaviour:
   keyBindingChecks:
   - keybindingActions: 104
     keyCode: 282
+  - keybindingActions: 2
+    keyCode: 101
   - keybindingActions: 1
-    keyCode: 97
+    keyCode: 105
   - keybindingActions: 3
-    keyCode: 115
-  - keybindingActions: 10001
-    keyCode: 100
-  - keybindingActions: 10002
-    keyCode: 102
-  - keybindingActions: 103
+    keyCode: 106
+  - keybindingActions: 4
+    keyCode: 107
+  - keybindingActions: 101
     keyCode: 122
   - keybindingActions: 102
     keyCode: 120
-  - keybindingActions: 2
+  - keybindingActions: 103
     keyCode: 99
-  - keybindingActions: 4
-    keyCode: 98

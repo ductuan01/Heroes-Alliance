@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b456bda183fe4abf8a30c9aae518a, type: 3}
   m_Name: PieceOfLeather
   m_EditorClassIdentifier: 
-  etcName: 3
+  etcName: Piece Of Leather
   etcType: 0
   etcCode: 3
-  amount: 1
+  Amount: 1
   defaultMaxStack: 999
   etcSprite: {fileID: 21300000, guid: 25f1dae5d16500e4b83607c6ea8cc4a0, type: 3}
+  radiusCollider: 0.2
   etcDescription: This is PieceOfLeather

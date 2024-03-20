@@ -34,6 +34,8 @@ public class PlayerInventory : PlayerAbstract
         this.CreateEmptyEquip();
         this.CreateEmptyUses();
         this.CreateEmptyEtcs();
+        this.LoadItemsData();
+
     }
 
     private void Update()
@@ -74,6 +76,86 @@ public class PlayerInventory : PlayerAbstract
         {
             _etcInventory.Add(new EtcInformation());
         }
+    }
+
+    private void LoadItemsData()
+    {
+        string resPath = "GameData/PlayerInventory/ItemsData";
+        ItemsDataSO itemsDataSO = Resources.Load<ItemsDataSO>(resPath);
+        if (itemsDataSO == null) return;
+        for (int i = 0; i < itemsDataSO.equipsData.Count; i++)
+        {
+            this._equipInventory[i].equipProfile = itemsDataSO.equipsData[i].equipProfile;
+            this._equipInventory[i].upgradeLevel = itemsDataSO.equipsData[i].upgradeLevel;
+        }
+
+        for (int i = 0; i < itemsDataSO.usesData.Count; i++)
+        {
+            this._useInventory[i].useProfile = itemsDataSO.usesData[i].useProfile;
+            this._useInventory[i].Amount = itemsDataSO.usesData[i].Amount;
+            this._useInventory[i].maxStack = itemsDataSO.usesData[i].maxStack;
+        }
+
+        for (int i = 0; i < itemsDataSO.etcsData.Count; i++)
+        {
+            this._etcInventory[i].etcProfile = itemsDataSO.etcsData[i].etcProfile;
+            this._etcInventory[i].Amount = itemsDataSO.etcsData[i].Amount;
+            this._etcInventory[i].maxStack = itemsDataSO.etcsData[i].maxStack;
+        }
+        this._ntd = itemsDataSO.NTD;
+    }
+    public void SaveItemsData()
+    {
+        string resPath = "GameData/PlayerInventory/ItemsData";
+        ItemsDataSO itemsDataSO = Resources.Load<ItemsDataSO>(resPath);
+        if (itemsDataSO == null) return;
+        for (int i = 0; i < itemsDataSO.equipsData.Count; i++)
+        {
+            itemsDataSO.equipsData[i].equipProfile = this._equipInventory[i].equipProfile;
+            itemsDataSO.equipsData[i].upgradeLevel = this._equipInventory[i].upgradeLevel;
+        }
+
+        for (int i = 0; i < itemsDataSO.usesData.Count; i++)
+        {
+            itemsDataSO.usesData[i].useProfile = this._useInventory[i].useProfile;
+            itemsDataSO.usesData[i].Amount = this._useInventory[i].Amount;
+            itemsDataSO.usesData[i].maxStack = this._useInventory[i].maxStack;
+        }
+
+        for (int i = 0; i < itemsDataSO.etcsData.Count; i++)
+        {
+            itemsDataSO.etcsData[i].etcProfile = this._etcInventory[i].etcProfile;
+            itemsDataSO.etcsData[i].Amount = this._etcInventory[i].Amount;
+            itemsDataSO.etcsData[i].maxStack = this._etcInventory[i].maxStack;
+        }
+        itemsDataSO.NTD = this._ntd;
+    }
+    public void ItemsDataNewGame()
+    {
+        string resPath = "GameData/PlayerInventory/ItemsData";
+        ItemsDataSO itemsDataSO = Resources.Load<ItemsDataSO>(resPath);
+        if (itemsDataSO == null) return;
+        for (int i = 0; i < itemsDataSO.equipsData.Count; i++)
+        {
+            itemsDataSO.equipsData[i].equipProfile = null;
+            itemsDataSO.equipsData[i].upgradeLevel = 0;
+        }
+
+        for (int i = 0; i < itemsDataSO.usesData.Count; i++)
+        {
+            itemsDataSO.usesData[i].useProfile = null;
+            itemsDataSO.usesData[i].Amount = 0;
+            itemsDataSO.usesData[i].maxStack = 0;
+        }
+
+        for (int i = 0; i < itemsDataSO.etcsData.Count; i++)
+        {
+            itemsDataSO.etcsData[i].etcProfile = null;
+            itemsDataSO.etcsData[i].Amount = 0;
+            itemsDataSO.etcsData[i].maxStack = 0;
+        }
+        itemsDataSO.NTD = 0;
+        this.LoadItemsData();
     }
 
     // ============================= NTD ===================================

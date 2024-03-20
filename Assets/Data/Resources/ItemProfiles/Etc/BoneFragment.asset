@@ -12,10 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 468b456bda183fe4abf8a30c9aae518a, type: 3}
   m_Name: BoneFragment
   m_EditorClassIdentifier: 
-  etcName: 4
+  etcName: Bone Fragment
   etcType: 0
   etcCode: 4
-  amount: 1
+  Amount: 1
   defaultMaxStack: 999
   etcSprite: {fileID: 21300000, guid: 0bafa2f17e2d5744c9e99c7bc945228d, type: 3}
+  radiusCollider: 0.2
   etcDescription: This is BoneFragment

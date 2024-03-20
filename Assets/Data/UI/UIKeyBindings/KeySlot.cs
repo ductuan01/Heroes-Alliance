@@ -17,7 +17,7 @@ public class KeySlot : SecondMonoBehaviour, IDropHandler
                 KeyDragDrop dragKey = transform.GetComponent<KeyDragDrop>();
                 if (dragKey == null) return;
 
-                dragKey.transform.parent = keySlot.transform;
+                dragKey.transform.SetParent(keySlot.transform);
                 dragKey.transform.localScale = new Vector3(1f, 1f, 1f);
                 dragKey.SetCanvasGroupTrue();
                 dragKey.gameObject.SetActive(true);
@@ -35,7 +35,7 @@ public class KeySlot : SecondMonoBehaviour, IDropHandler
                 KeyDragDrop dragKey = transform.GetComponent<KeyDragDrop>();
                 if (dragKey == null) return;
 
-                dragKey.transform.parent = keySlot.transform;
+                dragKey.transform.SetParent(keySlot.transform);
                 dragKey.transform.localScale = new Vector3(1f, 1f, 1f);
                 dragKey.SetCanvasGroupTrue();
                 dragKey.gameObject.SetActive(true);
@@ -45,7 +45,6 @@ public class KeySlot : SecondMonoBehaviour, IDropHandler
 
     public void OnDrop(PointerEventData eventData)
     {
-        Debug.Log("OnDrop");
         if (eventData.pointerDrag == null) return;
         GameObject dropObj = eventData.pointerDrag;
 
@@ -74,8 +73,6 @@ public class KeySlot : SecondMonoBehaviour, IDropHandler
         SkillDragDrop skillDragDrop = dropObj.GetComponent<SkillDragDrop>();
         if (skillDragDrop != null)
         {
-            Debug.Log("skill Drag Drop");
-
             SkillCode skillCode = skillDragDrop.skillInfo.skillProfile.skillCode;
 
             UIKeyBindingsCtrl.Instance.DeleteDuplicateKey(KeyBindingsCtrl.Instance.keySlots, skillCode.ToString());

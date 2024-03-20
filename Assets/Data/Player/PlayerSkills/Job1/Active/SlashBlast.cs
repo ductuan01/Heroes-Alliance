@@ -8,6 +8,7 @@ public class SlashBlast : PlayerSkillsAbstract
     public static SlashBlast Instance => _instance;
 
     [SerializeField] private SkillInfo _skillInfo;
+    public SkillInfo SkillInfo => _skillInfo;
 
     [SerializeField] private Transform _skillRange;
 
@@ -103,7 +104,6 @@ public class SlashBlast : PlayerSkillsAbstract
         foreach (Collider2D collider in colliders)
         {
             monsterList.Add(collider.transform);
-            Debug.Log(collider.transform.name);
         }
 
         if (monsterList.Count > 0) monsterList.Reverse();
@@ -112,7 +112,6 @@ public class SlashBlast : PlayerSkillsAbstract
         {
             for (int i = 0; i < this._maxEnemyHit; i++)
             {
-                Debug.Log(monsterList[i].name);
                 MonsterDamageReceiver damageAble = monsterList[i].GetComponentInChildren<MonsterDamageReceiver>();
                 if (damageAble == null) continue;
                 damageAble.ReceiveDamage(this._maxHit, minDamage, maxDamage, criticalRate);
@@ -121,10 +120,8 @@ public class SlashBlast : PlayerSkillsAbstract
 
         if (monsterList.Count <= this._maxEnemyHit)
         {
-            Debug.Log(monsterList.Count);
             foreach (Transform transform in monsterList)
             {
-                Debug.Log(transform.name);
                 MonsterDamageReceiver damageAble = transform.GetComponentInChildren<MonsterDamageReceiver>();
                 if (damageAble == null) continue;
                 damageAble.ReceiveDamage(this._maxHit, minDamage, maxDamage, criticalRate);

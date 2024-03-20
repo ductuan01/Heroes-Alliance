@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.EventSystems;
 
-public class DragUICtrl : SecondMonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler, IPointerClickHandler
+public class DragUICtrl : SecondMonoBehaviour, IPointerDownHandler, IDragHandler, IPointerUpHandler
 {
     [SerializeField] private RectTransform _rectTransform;
     [SerializeField] private Canvas _canvas;
@@ -38,16 +38,14 @@ public class DragUICtrl : SecondMonoBehaviour, IPointerDownHandler, IDragHandler
         RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvas.transform as RectTransform,
             eventData.position, _canvas.worldCamera, out initialPosition);
 
-        _rectTransform.transform.parent = _canvas.transform.Find("ForArrangeFirst").transform;
-        _rectTransform.transform.parent = _canvas.transform;
-
+        _rectTransform.transform.SetParent(this._canvas.transform.Find("ForArrangeFirst").transform);
+        _rectTransform.transform.SetParent(this._canvas.transform);
     }
 
     public void OnDrag(PointerEventData eventData)
     {
         if (isDragging)
         {
-            
             RectTransformUtility.ScreenPointToLocalPointInRectangle(_canvas.transform as RectTransform,
                 eventData.position, _canvas.worldCamera, out Vector2 localPoint);
 
@@ -62,10 +60,5 @@ public class DragUICtrl : SecondMonoBehaviour, IPointerDownHandler, IDragHandler
     public void OnPointerUp(PointerEventData eventData)
     {
         isDragging = false;
-    }
-
-    public void OnPointerClick(PointerEventData eventData)
-    {
-
     }
 }

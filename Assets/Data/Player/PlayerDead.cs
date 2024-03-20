@@ -27,7 +27,6 @@ public class PlayerDead : PlayerAbstract
     {
         float elapsedTime = 0f;
         Vector3 initialPosition = transform.position;
-
         while (elapsedTime < _flyDuration)
         {
             float t = elapsedTime / _flyDuration;

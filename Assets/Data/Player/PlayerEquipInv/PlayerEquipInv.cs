@@ -7,7 +7,7 @@ public class PlayerEquipInv : PlayerAbstract
     private static PlayerEquipInv instance;
     public static PlayerEquipInv Instance => instance;
 
-    [SerializeField] private List<PlayerEquipInvInfo> PlayerEquipInvSlots;
+    [SerializeField] private List<PlayerEquipInvInfo> _playerEquipInvSlots;
 
     private List<string> _nameEquipInvSlots = new List<string> { "Bottom", "Gloves", "Hat", "Shoes", "Top", "Weapon" };
 
@@ -18,22 +18,34 @@ public class PlayerEquipInv : PlayerAbstract
         PlayerEquipInv.instance = this;
         this.LinkPlayerEquipInvSlots();
     }
+    protected override void Start()
+    {
+        base.LoadComponents();
+
+        this.LoadEquipInvData();
+        this.LoadEquipsStats();
+        this.PlayerCtrl.PlayerStats.LoadStatsData();
+        this.PlayerCtrl.PlayerStats.SetDamage();
+        this.PlayerCtrl.PlayerStats.SetTotalHPMP();
+        HPMPBarManager.instance.HPMPBarChange(PlayerCtrl.PlayerStats.currentHP, PlayerCtrl.PlayerStats.TotalHP, PlayerCtrl.PlayerStats.currentMP, PlayerCtrl.PlayerStats.TotalMP);
+        AbilityManager.Instance.AbilityChange();
+    }
 
     private void CreatePlayerEquipInvSlots()
     {
-        this.PlayerEquipInvSlots.Clear();
+        this._playerEquipInvSlots.Clear();
         foreach (string nameEquipInvSlot in _nameEquipInvSlots)
         {
             PlayerEquipInvInfo newSlot = new PlayerEquipInvInfo();
             newSlot.nameSlots = nameEquipInvSlot;
-            this.PlayerEquipInvSlots.Add(newSlot);
+            this._playerEquipInvSlots.Add(newSlot);
         }
     }
 
     public void LinkPlayerEquipInvSlots()
     {
         this.CreatePlayerEquipInvSlots();
-        foreach (PlayerEquipInvInfo playerEqiupInvInfo in this.PlayerEquipInvSlots)
+        foreach (PlayerEquipInvInfo playerEqiupInvInfo in this._playerEquipInvSlots)
         {
             foreach (EquipSlot equipInvSlot in PlayerEquipInvSlotsCtrl.Instance.equipSlots)
             {
@@ -47,6 +59,63 @@ public class PlayerEquipInv : PlayerAbstract
         }
     }
 
+    private void LoadEquipInvData()
+    {
+        string resPath = "GameData/PlayerEquipInv/EquipInvData";
+        EquipInvDataSO equipInvDataSO = Resources.Load<EquipInvDataSO>(resPath);
+        if (equipInvDataSO == null) return;
+        foreach(PlayerEquipInvInfo playerEquipInvInfo in this._playerEquipInvSlots)
+        {
+            foreach(PlayerEquipInvInfo equipInvData in equipInvDataSO.EquipInvData)
+            {
+                if(playerEquipInvInfo.nameSlots == equipInvData.nameSlots)
+                {
+                    playerEquipInvInfo.equipInvInfo.equipProfile = equipInvData.equipInvInfo.equipProfile;
+                    playerEquipInvInfo.equipInvInfo.upgradeLevel = equipInvData.equipInvInfo.upgradeLevel;
+                }
+            }
+        }
+    }
+    public void SaveEquipInvData()
+    {
+        string resPath = "GameData/PlayerEquipInv/EquipInvData";
+        EquipInvDataSO equipInvDataSO = Resources.Load<EquipInvDataSO>(resPath);
+        if (equipInvDataSO == null) return;
+        foreach (PlayerEquipInvInfo playerEquipInvInfo in this._playerEquipInvSlots)
+        {
+            foreach (PlayerEquipInvInfo equipInvData in equipInvDataSO.EquipInvData)
+            {
+                if (playerEquipInvInfo.nameSlots == equipInvData.nameSlots)
+                {
+                    equipInvData.equipInvInfo.equipProfile = playerEquipInvInfo.equipInvInfo.equipProfile;
+                    equipInvData.equipInvInfo.upgradeLevel = playerEquipInvInfo.equipInvInfo.upgradeLevel;
+                }
+            }
+        }
+    }
+    public void EquipInvDataNewGame()
+    {
+        string resPath = "GameData/PlayerEquipInv/EquipInvData";
+        EquipInvDataSO equipInvDataSO = Resources.Load<EquipInvDataSO>(resPath);
+        if (equipInvDataSO == null) return;
+        foreach (PlayerEquipInvInfo equipInvData in equipInvDataSO.EquipInvData)
+        {
+            if (equipInvData.nameSlots == "Weapon")
+            {
+                equipInvData.equipInvInfo.equipProfile = Resources.Load<EquipProfileSO>("ItemProfiles/Equipment/Warrior/WoodenSword");
+                equipInvData.equipInvInfo.upgradeLevel = 0;
+            }
+            else
+            {
+                equipInvData.equipInvInfo.equipProfile = null;
+                equipInvData.equipInvInfo.upgradeLevel = 0;
+            }    
+        }
+        this.LoadEquipInvData();
+        this.LoadEquipsStats();
+        PlayerEquipInvSlotsCtrl.Instance.LoadEquipImage();
+    }
+
     public void LoadEquipsStats()
     {
         int STR = 0;
@@ -58,7 +127,7 @@ public class PlayerEquipInv : PlayerAbstract
         int AttPower = 0;
         int MattPower = 0;
 
-        foreach(PlayerEquipInvInfo playerEquipInv in this.PlayerEquipInvSlots)
+        foreach(PlayerEquipInvInfo playerEquipInv in this._playerEquipInvSlots)
         {
             EquipInformation equipInfo = playerEquipInv.equipInvInfo;
             if (equipInfo.equipProfile == null) continue;

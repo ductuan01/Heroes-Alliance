@@ -72,6 +72,18 @@ public class InputManager : SecondMonoBehaviour
         this._direction.w = Input.GetKey(KeyCode.DownArrow) ? 1 : 0;
     }
 
+    public virtual void KeyBindingsNewGame()
+    {
+        KeyBindings keybindingsData = Resources.Load<KeyBindings>("GameData/KeybindingsData");
+        if (keybindingsData == null) return;
+        this.ClearKeyBindings();
+        foreach(KeyBindingCheck keyBindingCheckData in keybindingsData.keyBindingChecks)
+        {
+            this._keyBindings.keyBindingChecks.Add(keyBindingCheckData);
+        }
+        //UIKeyBindingsCtrl.Instance.LoadKeyBindingsSO(this._keyBindings);
+    }    
+
     public virtual void AddKeyBindings(KeyBindingCheck key)
     {
         foreach (KeyBindingCheck keyBindingCheck in this._keyBindings.keyBindingChecks)

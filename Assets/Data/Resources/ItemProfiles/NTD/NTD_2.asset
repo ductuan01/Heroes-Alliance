@@ -15,5 +15,6 @@ MonoBehaviour:
   ntdType: 2
   minNTD: 50
   maxNTD: 99
-  radiusCollider: 0.25
+  dropRate: 0
+  radiusCollider: 0.2
   coinSprite: {fileID: 21300000, guid: 305f943eb0f2a0a42a152735002d6ef5, type: 3}

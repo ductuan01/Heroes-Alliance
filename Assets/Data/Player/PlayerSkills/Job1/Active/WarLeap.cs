@@ -8,6 +8,7 @@ public class WarLeap : PlayerSkillsAbstract
     public static WarLeap Instance => _instance;
 
     [SerializeField] private SkillInfo _skillInfo;
+    public SkillInfo SkillInfo => _skillInfo;
 
     private bool _canUse = true;
 

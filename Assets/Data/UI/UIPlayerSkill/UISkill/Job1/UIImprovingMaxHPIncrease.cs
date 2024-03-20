@@ -8,7 +8,7 @@ public class UIImprovingMaxHPIncrease : BaseUISkill
 {
     private static UIImprovingMaxHPIncrease _instance;
     public static UIImprovingMaxHPIncrease Instance => _instance;
-    protected override string _NameSkill => "ImprovingMaxHPIncrease";
+    protected override string NameSkill => "ImprovingMaxHPIncrease";
 
     protected override void Awake()
     {

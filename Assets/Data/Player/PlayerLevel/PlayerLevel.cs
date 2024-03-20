@@ -24,12 +24,46 @@ public class PlayerLevel : PlayerAbstract
         base.Awake();
         if (PlayerLevel._instance != null) Debug.LogError("Only 1 PlayerLevel allow to exist");
         PlayerLevel._instance = this;
+
+        this.LoadLevelData();
     }
 
     protected override void Start()
     {
         base.Start();
-        UIHPMPBarCtrl.instance.SetLevelPlayer(_currentLevel);
+        UIHPMPBarCtrl.instance.SetLevelPlayer(this._currentLevel);
+        _experienceManager.AddExperience(0);
+    }
+
+    private void LoadLevelData()
+    {
+        string resPath = "GameData/PlayerLevel/LevelData";
+        LevelDataSO levelDataSO = Resources.Load<LevelDataSO>(resPath);
+        if (levelDataSO == null) return;
+        this._currentLevel = levelDataSO.currentLevel;
+        this._currentExperience = levelDataSO.currentExperience;
+        this._maxExperience = levelDataSO.maxExperience;
+    }
+
+    public void SaveLevelData()
+    {
+        string resPath = "GameData/PlayerLevel/LevelData";
+        LevelDataSO levelDataSO = Resources.Load<LevelDataSO>(resPath);
+        if (levelDataSO == null) return;
+        levelDataSO.currentLevel = this._currentLevel;
+        levelDataSO.currentExperience = this._currentExperience;
+        levelDataSO.maxExperience = this._maxExperience;
+    }
+    public void LevelDataNewGame()
+    {
+        string resPath = "GameData/PlayerLevel/LevelData";
+        LevelDataSO levelDataSO = Resources.Load<LevelDataSO>(resPath);
+        if (levelDataSO == null) return;
+        levelDataSO.currentLevel = 1;
+        levelDataSO.currentExperience = 0;
+        levelDataSO.maxExperience = 100;
+        this.LoadLevelData();
+        ExpBarManager.instance.ExpBarChange();
     }
 
     protected override void LoadComponents()

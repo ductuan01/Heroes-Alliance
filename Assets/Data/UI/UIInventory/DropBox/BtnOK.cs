@@ -6,7 +6,7 @@ public class BtnOK : BaseButton
 {
     protected override void OnClick()
     {
-        string Limit = UIInventoryCtrl.Instance.amountDropBox.inputField.text;
+        string Limit = UIInventoryCtrl.Instance.amountDropBox.InputField.text;
         DropItemFromInv.Instance.UseAndEtcDrop(int.Parse(Limit));
     }
     private void Update()

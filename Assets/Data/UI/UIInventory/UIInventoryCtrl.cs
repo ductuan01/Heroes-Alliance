@@ -158,6 +158,9 @@ public class UIInventoryCtrl : SecondMonoBehaviour
 
     public virtual void Toggle()
     {
+        this.transform.SetParent(transform.parent.Find("ForArrangeFirst").transform);
+        this.transform.SetParent(transform.parent.parent);
+
         this.uiNTDCtrl.HandleNTDChange(PlayerInventory.Instance.Ntd);
         this.HandleEquipInvChange();
         this.HandleUseInvChange();

@@ -42,7 +42,7 @@ public class MonsterSpawnerRandom : SecondMonoBehaviour
         pos.z = 0;
         //Quaternion rot = transform.rotation;
 
-        Transform obj = this.monsterSpawnerCtrl.MonsterSpawner.Spawn(MonsterSpawner.monster2, pos, Quaternion.identity);
+        Transform obj = this.monsterSpawnerCtrl.MonsterSpawner.Spawn(MonsterSpawner.skeletonPikeman, pos, Quaternion.identity);
         obj.gameObject.SetActive(true);
     }
 

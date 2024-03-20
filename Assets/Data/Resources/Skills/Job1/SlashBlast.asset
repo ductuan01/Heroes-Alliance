@@ -33,7 +33,7 @@ MonoBehaviour:
     maxEnemyHit: 2
     maxHit: 3
     Force: 0
-    infoSkill: MP -6, damage 70%
+    infoSkill: 'MP Cost: 6, damage 70%, Max Enemy Hit: 2, Max Hit: 3'
   - levelSkill: 2
     MPCost: 8
     HPCost: 0
@@ -41,7 +41,7 @@ MonoBehaviour:
     maxEnemyHit: 2
     maxHit: 3
     Force: 0
-    infoSkill: MP -8, damage 80%
+    infoSkill: 'MP Cost: 8, damage 80%, Max Enemy Hit: 2, Max Hit: 3'
   - levelSkill: 3
     MPCost: 10
     HPCost: 0
@@ -49,7 +49,7 @@ MonoBehaviour:
     maxEnemyHit: 2
     maxHit: 3
     Force: 0
-    infoSkill: MP -10, damage 90%
+    infoSkill: 'MP Cost: 10, damage 90%, Max Enemy Hit: 2, Max Hit: 3'
   - levelSkill: 4
     MPCost: 12
     HPCost: 0
@@ -57,7 +57,7 @@ MonoBehaviour:
     maxEnemyHit: 2
     maxHit: 3
     Force: 0
-    infoSkill: MP -12, damage 100%
+    infoSkill: 'MP Cost: 12, damage 100%, Max Enemy Hit: 2, Max Hit: 3'
   - levelSkill: 5
     MPCost: 14
     HPCost: 0
@@ -65,7 +65,7 @@ MonoBehaviour:
     maxEnemyHit: 2
     maxHit: 3
     Force: 0
-    infoSkill: MP -14, damage 110%
+    infoSkill: 'MP Cost: 14, damage 110%, Max Enemy Hit: 2, Max Hit: 3'
   InfoPassiveSkill: []
   recoverHP: 0
   recoverMP: 0

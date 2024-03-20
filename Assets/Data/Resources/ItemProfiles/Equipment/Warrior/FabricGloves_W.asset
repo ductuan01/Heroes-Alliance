@@ -30,5 +30,5 @@ MonoBehaviour:
   MattPower: 1
   RemainingEnhancements: 0
   defaultMaxStack: 1
-  radiusCollider: 0.35
+  radiusCollider: 0.2
   equipSprite: {fileID: 21300000, guid: 3d32d66f509d9d94dbbd085cf3e22841, type: 3}

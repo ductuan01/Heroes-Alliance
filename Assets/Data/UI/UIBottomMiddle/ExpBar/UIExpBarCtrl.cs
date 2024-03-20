@@ -11,6 +11,7 @@ public class UIExpBarCtrl : SecondMonoBehaviour
 
     [SerializeField] private Slider _EXPSlider;
     [SerializeField] private TextMeshProUGUI _EXPText;
+    [SerializeField] private TextMeshProUGUI _LevelText;
 
     [SerializeField] private ExpBarManager _ExpBarManager;
 
@@ -33,11 +34,8 @@ public class UIExpBarCtrl : SecondMonoBehaviour
     {
         base.LoadComponents();
         this.LoadEXPSlider();
-        //this.LoadMPSlider();
         this.LoadEXPText();
-        //this.LoadMPText();
-        //this.LoadLevelText();
-        //this.LoadNameText();
+        this.LoadLevelText();
         this.LoadExpBarManager();
     }
 
@@ -57,8 +55,14 @@ public class UIExpBarCtrl : SecondMonoBehaviour
     private void LoadEXPText()
     {
         if (this._EXPText != null) return;
-        this._EXPText = transform.GetComponentInChildren<TextMeshProUGUI>();
+        this._EXPText = transform.Find("ExpText").GetComponent<TextMeshProUGUI>();
         Debug.LogWarning(transform.name + ": LoadEXPText", gameObject);
+    }
+    private void LoadLevelText()
+    {
+        if (this._LevelText != null) return;
+        this._LevelText = transform.parent.Find("HpMpBar").Find("LevelText").GetComponentInChildren<TextMeshProUGUI>();
+        Debug.LogWarning(transform.name + ": LoadLevelText", gameObject);
     }
 
     private void LoadExpBarManager()
@@ -77,7 +81,7 @@ public class UIExpBarCtrl : SecondMonoBehaviour
         float value = Mathf.Clamp01((float)currentEXP / (float)maxEXP);
         this._EXPSlider.value = value;
         this._EXPText.SetText("EXP: " + currentEXP + "/" + maxEXP + " [" + value * 100 + "%]");
-        
+        this._LevelText.SetText("Lv." + level);
 
         //UIHPMPBarCtrl.instance.SetLevelPlayer(level);
     }

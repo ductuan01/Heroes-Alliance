@@ -8,6 +8,10 @@ public class SkillPointManager : SecondMonoBehaviour
 
     public event SkillPointChangeHandler OnSkillPointChange;
 
+    public delegate void SkillLevelChangeHandler(int level);
+
+    public event SkillLevelChangeHandler OnSkillLevelChange;
+
     private static SkillPointManager _instance;
     public static SkillPointManager Instance => _instance;
 
@@ -21,5 +25,10 @@ public class SkillPointManager : SecondMonoBehaviour
     public void SkillPointChange(int point)
     {
         OnSkillPointChange?.Invoke(point);
+    }
+
+    public void SkillLevelChange(int level)
+    {
+        OnSkillLevelChange?.Invoke(level);
     }
 }

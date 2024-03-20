@@ -23,7 +23,7 @@ public abstract class Spawner : SecondMonoBehaviour
     {
         if (this.holder != null) return;
         this.holder = transform.Find("Holder");
-        Debug.Log(transform.name + ": LoadHolder", gameObject);
+        Debug.LogWarning(transform.name + ": LoadHolder", gameObject);
     }
 
     protected virtual void LoadPrefabs()
@@ -57,8 +57,8 @@ public abstract class Spawner : SecondMonoBehaviour
 
         Transform newPrefab = this.GetObjectFromPool(prefab);
         newPrefab.SetPositionAndRotation(spawnPos, rotation);
-        newPrefab.parent = this.transform;
-        newPrefab.parent = this.holder;
+        newPrefab.SetParent(this.transform);
+        newPrefab.SetParent(this.holder);
         //newPrefab.gameObject.SetActive(true);
         this.spawnedCount++;
         return newPrefab;
@@ -84,6 +84,14 @@ public abstract class Spawner : SecondMonoBehaviour
         this.poolObjs.Add(obj);
         obj.gameObject.SetActive(false);
         this.spawnedCount--;
+    }
+
+    public void DespawnAllInHolder()
+    {
+        foreach(Transform transform in this.holder)
+        {
+            transform.gameObject.SetActive(false);
+        }
     }
 
     public virtual Transform GetPrefabByName(string prefabName)
@@ -122,7 +130,6 @@ public abstract class Spawner : SecondMonoBehaviour
         float flyDuration = 0.35f;
         float holdDuration = 0.05f; // Duration to hold in space
         float flyHeight = 0.35f; // Adjust the height to fly up
-        float dropHeight = 1f; // Height from where it starts to fall
         float elapsedTime = 0f;
         Vector3 initialPosition = itemTransform.position;
 

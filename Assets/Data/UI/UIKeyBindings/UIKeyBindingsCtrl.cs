@@ -30,7 +30,7 @@ public class UIKeyBindingsCtrl : Spawner
     {
         base.Start();
         this._keyBindingsMenuCtrl.gameObject.SetActive(false);
-        this.LoadKeyBindingsSO(this._keyBindingsCtrl.keySlots, InputManager.Instance.KeyBindings);
+        this.LoadKeyBindingsSO(InputManager.Instance.KeyBindings);
     }
     protected override void OnEnable()
     {
@@ -46,6 +46,9 @@ public class UIKeyBindingsCtrl : Spawner
 
     public virtual void KeyBindingsToggle()
     {
+        this.transform.SetParent(transform.parent.Find("ForArrangeFirst").transform);
+        this.transform.SetParent(transform.parent.parent);
+
         this.isOpen = !this.isOpen;
         if (this.isOpen) this.OpenKeyBindings();
         else this.CloseKeyBindings();
@@ -188,7 +191,7 @@ public class UIKeyBindingsCtrl : Spawner
         return true;
     }
 
-    private bool LoadKeyBindingsSO(List<KeySlot> keySlots, KeyBindings keyBindings)
+    public bool LoadKeyBindingsSO(KeyBindings keyBindings)
     {
         foreach (KeyBindingCheck keyBindingCheck in keyBindings.keyBindingChecks)
         {
@@ -206,7 +209,7 @@ public class UIKeyBindingsCtrl : Spawner
                     keySlot = FindKeySlot(this._keyBindingsCtrl.keySlots, keyBindingCheck);
                     if (keySlot == null) continue;
 
-                    transform.parent = keySlot.transform;
+                    transform.SetParent(keySlot.transform);
                     transform.localScale = new Vector3(1f, 1f, 1f);
                     transform.gameObject.SetActive(true);
 
@@ -217,7 +220,7 @@ public class UIKeyBindingsCtrl : Spawner
                     Transform transform2 = UIKeyBindingsCtrl.Instance.Spawn(prefab.transform.name, new Vector3(0f, 0f, 0f), Quaternion.identity);
                     if (transform2 == null) return false;
 
-                    transform2.parent = keySlotStatic.transform;
+                    transform2.SetParent(keySlotStatic.transform);
                     transform2.localScale = new Vector3(1f, 1f, 1f);
                     transform2.gameObject.SetActive(true);
 
@@ -246,12 +249,12 @@ public class UIKeyBindingsCtrl : Spawner
         return null;
     }
 
-    public virtual Transform GetPrefabByName(string prefabName)
+/*    public virtual Transform GetPrefabByName(string prefabName)
     {
         foreach (Transform prefab in this.prefabs)
         {
             if (prefab.name == prefabName) return prefab;
         }
         return null;
-    }
+    }*/
 }

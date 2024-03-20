@@ -37,7 +37,6 @@ public class MonsterDrop : MonsterAbstract
         {
             if (Random.value < etcDrop.dropRate)
             {
-                Debug.Log(etcDrop);
                 string name = etcDrop.etcProfile.ToString().Split(' ')[0];
                 DropList.Add((name, etcDrop.etcProfile.GetType().ToString()));
             }
@@ -47,7 +46,6 @@ public class MonsterDrop : MonsterAbstract
         {
             if (Random.value < ntdDrop.dropRate)
             {
-                Debug.Log(ntdDrop);
                 string name = ntdDrop.ntdProfile.ToString().Split(' ')[0];
                 DropList.Add((name, ntdDrop.ntdProfile.GetType().ToString()));
             }

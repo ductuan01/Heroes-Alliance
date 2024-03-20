@@ -60,8 +60,10 @@ public class DropItemFromInv : SecondMonoBehaviour, IDropHandler
         {
             UseInformation useInfo = PlayerInventory.Instance.InfoUseDrop(_useDragDrop.useInfo.useInformation, amount);
             Transform transform = UseSpawner.Instance.Spawn(useInfo.useProfile.useCode.ToString(), PlayerCtrl.Instance.transform.position, Quaternion.identity);
-            transform.GetComponentInChildren<UseBaseInfo>().SetValue(useInfo);
             transform.gameObject.SetActive(true);
+            UseBaseInfo useBaseInfo = transform.GetComponentInChildren<UseBaseInfo>();
+            if (useBaseInfo == null) return;
+            useBaseInfo.SetValue(useInfo);
             UIInventoryCtrl.Instance.amountDropBox.HideBox();
             InventoryManager.Instance.InventoryChange();
             return;
@@ -71,8 +73,10 @@ public class DropItemFromInv : SecondMonoBehaviour, IDropHandler
         {
             EtcInformation etcInfo = PlayerInventory.Instance.InfoEtcDrop(_etcDragDrop.etcInfo.etcInformation, amount);
             Transform transform = EtcSpawner.Instance.Spawn(etcInfo.etcProfile.etcCode.ToString(), PlayerCtrl.Instance.transform.position, Quaternion.identity);
-            transform.GetComponentInChildren<EtcBaseInfo>().SetValue(etcInfo);
             transform.gameObject.SetActive(true);
+            EtcBaseInfo etcBaseInfo = transform.GetComponentInChildren<EtcBaseInfo>();
+            if (etcBaseInfo == null) return;
+            etcBaseInfo.SetValue(etcInfo);
             UIInventoryCtrl.Instance.amountDropBox.HideBox();
             InventoryManager.Instance.InventoryChange();
             return;

@@ -1,12 +1,13 @@
-/*using System.Collections;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public abstract class MonsterAbstract : SecondMonoBehaviour
 {
-    [Header("Monster Abstract")]
-    [SerializeField] protected MonsterMonsterCtrl monsterCtrl;
-    public MonsterMonsterCtrl MonsterCtrl => monsterCtrl;
+    [Header("MonsterAbstract")]
+
+    [SerializeField] private MonsterCtrl _monsterCtrl;
+    public MonsterCtrl MonsterCtrl => _monsterCtrl;
 
     protected override void LoadComponents()
     {
@@ -16,9 +17,8 @@ public abstract class MonsterAbstract : SecondMonoBehaviour
 
     protected virtual void LoadMonsterCtrl()
     {
-        if (monsterCtrl != null) return;
-        this.monsterCtrl = transform.GetComponentInParent<MonsterMonsterCtrl>();
+        if (_monsterCtrl != null) return;
+        this._monsterCtrl = transform.GetComponentInParent<MonsterCtrl>();
         Debug.LogWarning(transform.name + ": LoadMonsterCtrl", gameObject);
     }
 }
-*/

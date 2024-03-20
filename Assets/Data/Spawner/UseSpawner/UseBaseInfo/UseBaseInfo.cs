@@ -55,6 +55,7 @@ public class UseBaseInfo : UseAbstract
     {
         this._useInformation.useProfile = useInfo.useProfile;
         this._useInformation.Amount = useInfo.Amount;
+        Debug.Log(this._useInformation.Amount);
         this._useInformation.maxStack = useInfo.maxStack;
     }
 }

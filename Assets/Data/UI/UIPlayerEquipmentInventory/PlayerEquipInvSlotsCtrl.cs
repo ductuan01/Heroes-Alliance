@@ -31,4 +31,14 @@ public class PlayerEquipInvSlotsCtrl : SecondMonoBehaviour
             if(equipInvSlot.GetComponent<EquipSlot>() != null) this._equipSlots.Add(equipInvSlot.GetComponent<EquipSlot>());
         }
     }
+
+    public void LoadEquipImage()
+    {
+        foreach(EquipSlot equipSlot in this._equipSlots)
+        {
+            EquipDragDrop equipDragDrop = equipSlot.transform.GetComponentInChildren<EquipDragDrop>();
+            if (equipDragDrop == null) continue;
+            equipDragDrop.SetUIPlayerEquipInv2();
+        }
+    }
 }

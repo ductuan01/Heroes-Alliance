@@ -80,8 +80,12 @@ public class UIPlayerStatsCtrl : SecondMonoBehaviour
 
     public void Toggle()
     {
+        this.transform.SetParent(transform.parent.Find("ForArrangeFirst").transform);
+        this.transform.SetParent(transform.parent.parent);
+
         PlayerStats.Instance.SetDamage();
         this.isOpen = !this.isOpen;
+        this.SetUIPlayerStats();
         if (this.isOpen) this.gameObject.SetActive(true);
         else this.gameObject.SetActive(false);
     }
