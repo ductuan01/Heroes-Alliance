@@ -32,7 +32,7 @@ public class ShowUIInfo : SecondMonoBehaviour, IPointerEnterHandler, IPointerExi
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEquip.SetItemInfo(equipment);
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEquip.gameObject.SetActive(true);
         Vector3 mousePos = InputManager.Instance.MouseWorldPos;
-        UIInventoryCtrl.Instance.uiInfoCtrl.transform.position = mousePos;
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiEquip.transform.position = mousePos;
     }
 
     protected virtual void ShowUseInfo(PointerEventData eventData)
@@ -45,6 +45,8 @@ public class ShowUIInfo : SecondMonoBehaviour, IPointerEnterHandler, IPointerExi
         UIInventoryCtrl.Instance.uiInfoCtrl.uiUse.SetItemImage(use);
         UIInventoryCtrl.Instance.uiInfoCtrl.uiUse.SetItemDescription(use);
         UIInventoryCtrl.Instance.uiInfoCtrl.uiUse.gameObject.SetActive(true);
+        Vector3 mousePos = InputManager.Instance.MouseWorldPos;
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiUse.transform.position = mousePos;
     }
 
     protected virtual void ShowEtcInfo(PointerEventData eventData)
@@ -57,6 +59,8 @@ public class ShowUIInfo : SecondMonoBehaviour, IPointerEnterHandler, IPointerExi
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.SetItemImage(etc);
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.SetItemDescription(etc);
         UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.gameObject.SetActive(true);
+        Vector3 mousePos = InputManager.Instance.MouseWorldPos;
+        UIInventoryCtrl.Instance.uiInfoCtrl.uiEtc.transform.position = mousePos;
     }
 
 /*    protected virtual void ShowSkillInfo(PointerEventData eventData)

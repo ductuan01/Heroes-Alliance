@@ -78,6 +78,7 @@ public class MonsterMovement : MonsterAbstract
     protected override void OnEnable()
     {
         base.OnEnable();
+        this._bIsGoingRight = true;
         this._bIsChaseMode = false;
         this._bIsStop = false;
     }
@@ -100,8 +101,9 @@ public class MonsterMovement : MonsterAbstract
         this.CheckAbyss();
         this.SlopeCheck();
         this.ApplyMovement();
-/*        if (transform.parent.rotation.y == 0 && !this._bIsGoingRight) this._bIsGoingRight = true;
-        if (transform.parent.rotation.y == -180 && this._bIsGoingRight) this._bIsGoingRight = false;*/
+        //if (transform.parent.rotation.eulerAngles.y == 0 && !this._bIsGoingRight) this._bIsGoingRight = true;
+        //if (transform.parent.rotation.eulerAngles.y == -180 && this._bIsGoingRight) this._bIsGoingRight = false;
+        /*       if (transform.parent.rotation.eulerAngles.y == -180 && this._bIsGoingRight == true) this.Flip();*/
     }
 
     private void CheckInput()
@@ -123,8 +125,6 @@ public class MonsterMovement : MonsterAbstract
                 if (!this._bIsStop)
                 {
                     this._xInput = (this._bIsGoingRight) ? 1 : -1;
-                    if (_xInput == 1 && !this._bIsGoingRight) this.Flip();
-                    if (_xInput == -1 && this._bIsGoingRight) this.Flip();
                 }
             }
             if (this._bIsChaseMode)
@@ -132,12 +132,12 @@ public class MonsterMovement : MonsterAbstract
                 if (transform.parent.position.x + 0.7f < PlayerCtrl.Instance.transform.position.x)
                 {
                     _xInput = 1;
-                    if (_xInput == 1 && !this._bIsGoingRight) this.Flip();
+                    if (this._bIsGoingRight == false) this.Flip();
                 }
                 else if (transform.parent.position.x - 0.7f > PlayerCtrl.Instance.transform.position.x)
                 {
                     _xInput = -1;
-                    if (_xInput == -1 && this._bIsGoingRight) this.Flip();
+                    if (this._bIsGoingRight == true) this.Flip();
                 }
                 else
                 {

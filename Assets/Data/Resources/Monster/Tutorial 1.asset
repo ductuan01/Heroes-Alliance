@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tutorial 1
   m_EditorClassIdentifier: 
   MonsterLevel: 1
-  monsterName: MonsterTutorial1
+  monsterName: Tutorial 1
   damage: 1
   hpMax: 20
   MonsterDR: 0.1
